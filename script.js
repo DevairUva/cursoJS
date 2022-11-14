@@ -1,34 +1,26 @@
-let nomeP1 = prompt('nome p1');
-let atk = prompt('ataque');
-let nomeP2 = prompt('nome p2');
-let vida = prompt('vida '+nomeP2);
-let dfs = prompt('defesa '+nomeP2);
-let escudo = confirm(nomeP2+' possui um escudo?')
-let esc;
-let dano;
+let valor = prompt('Um valor em metros (mt)');
+let opcao = prompt('deseja converter o valor '+valor+
+'em: \nmilimetro\ncentímetro\ndecímetro\ndecâmetro\nhectômetro\nquilômetro');
 
-if(atk>dfs && escudo == false){
-    dano = atk - dfs;
-} else if (atk>dfs && escudo == true){
-    dano = (atk - dfs)/2;
-} else if (atk == dfs){
-    dano = 0;
+switch(opcao){
+    case 'milimetro':
+        alert('Valor em milimetros: '+(valor*1000));
+        break;
+    case 'centímetro':
+        alert('Valor em centímetros: '+(valor*100));
+        break;
+    case 'decímetro':
+        alert('Valor em decímetros: '+(valor*10));
+        break;
+    case 'decâmetro':
+        alert('Valor em decâmetros: '+(valor/10));
+        break;
+    case 'hectômetro':
+        alert('Valor em hectômetros: '+(valor/100));
+        break;
+    case 'quilômetro':
+        alert('Valor em quilômetros: '+(valor/1000));
+        break;                        
+    default:
+        alert('Opção incorreta');
 }
-
-let vidaRestante = vida-dano;
-
-if(escudo == true){
-    esc = "sim"
-} else {
-    esc = "não"
-}
-
-if(vidaRestante<=0){
-    vidaRestante = 'se fudeu'
-}
-
-alert(
-    'Atacante: '+nomeP1+' | ataque: '+atk+
-    '\nDefensor: '+nomeP2+' | vida antes do ataque: '+vida+
-    '| dfs: '+dfs+' | escudo: '+esc+' | dano: '+dano+' | vida após ataque: '+vidaRestante
-)
