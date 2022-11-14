@@ -1,26 +1,14 @@
-let valor = prompt('Um valor em metros (mt)');
-let opcao = prompt('deseja converter o valor '+valor+
-'em: \nmilimetro\ncentímetro\ndecímetro\ndecâmetro\nhectômetro\nquilômetro');
+let nome = prompt ('nome do turista');
+let opcao = prompt('Já visitou alguma cidade?');
+let cidades = prompt('escreva o nome da cidade');
 
-switch(opcao){
-    case 'milimetro':
-        alert('Valor em milimetros: '+(valor*1000));
-        break;
-    case 'centímetro':
-        alert('Valor em centímetros: '+(valor*100));
-        break;
-    case 'decímetro':
-        alert('Valor em decímetros: '+(valor*10));
-        break;
-    case 'decâmetro':
-        alert('Valor em decâmetros: '+(valor/10));
-        break;
-    case 'hectômetro':
-        alert('Valor em hectômetros: '+(valor/100));
-        break;
-    case 'quilômetro':
-        alert('Valor em quilômetros: '+(valor/1000));
-        break;                        
-    default:
-        alert('Opção incorreta');
+while(opcao !== 'não'){
+    opcao = prompt('Já visitou alguma outra cidade?');
+    if(opcao === "sim"){
+        cidades += ', '+prompt('escreva o nome da cidade');
+    } else {
+        alert('ok')
+    }
 }
+
+alert(nome+' já visitou as seguintes cidades: \n'+cidades);
