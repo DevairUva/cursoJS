@@ -30,8 +30,8 @@ do{
     opcao = parseInt(prompt('Você tem R$'+atual+'. O que deseja fazer?\n1)Aumentar\n2)Diminuir\n3)Sair'));
     switch(opcao){
         case 1:
-            add = prompt('Aumentar quanto?');
-            atual = parseFloat(atual+add);
+            add = parseInt(prompt('Aumentar quanto?'));
+            atual = parseInt(atual+add);
             break;
         case 2:
             sub = prompt('Diminuir quanto?');
