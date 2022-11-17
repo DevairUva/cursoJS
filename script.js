@@ -45,8 +45,8 @@
 //     }
 // }while(opcao != 3);
 
-//TABOADA
-// let numero = prompt('Deseja a taboada de qual número?');
+//TABUADA
+// let numero = prompt('Deseja a tabuada de qual número?');
 // let resposta = ''
 
 // for(i=1; i<21; i++){
