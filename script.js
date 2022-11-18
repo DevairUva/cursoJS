@@ -75,3 +75,32 @@
 //     )
 // }
 
+//Array
+const arr = [];
+arr.push('devair'); //insere no final
+arr.push(8);
+console.log(arr);
+console.log(arr[2]);
+arr.push('macaco')
+console.log(arr);
+console.log(arr[2])
+arr.unshift('isabela'); //inclui no início
+console.log(arr);
+arr.pop(); //remove o último
+console.log(arr);
+arr.shift(); //remove primeiro
+console.log(arr);
+let falso = arr.includes('graça'); //pesquisa e retorna true ou false
+console.log(falso);
+let verdadeiro = arr.includes(8); 
+console.log(verdadeiro);
+let posicao = arr.indexOf('devair'); //pesquisa e retorna a posição
+console.log(posicao);
+let vazio = arr.indexOf(81); //retorna negativo, pq não existe
+console.log(vazio);
+arr.push('isabela', 33);
+console.log(arr);
+const arr2 = arr.slice(1,4); //copia os elemento de 1 a 3 do array anterior
+console.log(arr2);
+const negativo = arr.slice(-2); //pegando a partir de um indíce de trás pra frente
+console.log(negativo);
