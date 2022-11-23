@@ -113,15 +113,46 @@
 // console.log('item removido de "juntos" : '+removidos);
 // console.log(juntos[6]); //vem que vem;
 
-let pacientes = ['Matheus, Marcos, Lucas, João'];
+let pacientes = ['Matheus', 'Marcos', 'Lucas', 'João'];
+let novoPaciente = '';
+let atendido = ''
 let op = 0;
 
+console.log('Lista de Pacientes:')
+for(i=0; i<pacientes.length; i++){
+    console.log((i+1)+'° Paciente: '+pacientes[i])
+};
+
+op = prompt('Selecione uma da seguintes opções:'+
+    '\n1.Add novo paciente\n2.Atenter paciente\n3.Sair'
+);
+
 do{
-    alert(
-        '<H3>Lista de pacientes</H3>\n'
-    
-
-    )
-
+    if(pacientes == ''){
+        alert('Não existem pacientes em espera!');
+        op = 3;
+    } else if(op == 1){
+        novoPaciente = prompt('Digite o nome do novo paciente');
+        pacientes.push(novoPaciente);
+        console.log('\nLista de Pacientes:')
+        for(i=0; i<pacientes.length; i++){
+            console.log((i+1)+'° Paciente: '+pacientes[i])
+        }
+        op = prompt('Selecione uma da seguintes opções:'+
+        '\n1.Add novo paciente\n2.Atenter paciente\n3.Sair');
+    } else if (op == 2){
+        atendido = pacientes.shift();
+        alert('Paciente atendido: '+atendido);
+        console.log('\nLista de Pacientes:')
+        for(i=0; i<pacientes.length; i++){
+            console.log((i+1)+'° Paciente: '+pacientes[i])
+        }
+        op = prompt('Selecione uma da seguintes opções:'+
+        '\n1.Add novo paciente\n2.Atenter paciente\n3.Sair');
+    } else if (op>3 || op<1){
+        alert('Opção inválida');
+    } else if (op == 3){
+        alert('Saindo...')
+    }
 
 }while(op!=3);
