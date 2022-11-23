@@ -76,31 +76,52 @@
 // }
 
 //Array
-const arr = [];
-arr.push('devair'); //insere no final
-arr.push(8);
-console.log(arr);
-console.log(arr[2]);
-arr.push('macaco')
-console.log(arr);
-console.log(arr[2])
-arr.unshift('isabela'); //inclui no início
-console.log(arr);
-arr.pop(); //remove o último
-console.log(arr);
-arr.shift(); //remove primeiro
-console.log(arr);
-let falso = arr.includes('graça'); //pesquisa e retorna true ou false
-console.log(falso);
-let verdadeiro = arr.includes(8); 
-console.log(verdadeiro);
-let posicao = arr.indexOf('devair'); //pesquisa e retorna a posição
-console.log(posicao);
-let vazio = arr.indexOf(81); //retorna negativo, pq não existe
-console.log(vazio);
-arr.push('isabela', 33);
-console.log(arr);
-const arr2 = arr.slice(1,4); //copia os elemento de 1 a 3 do array anterior
-console.log(arr2);
-const negativo = arr.slice(-2); //pegando a partir de um indíce de trás pra frente
-console.log(negativo);
+// const arr = [];
+// arr.push('devair'); //insere no final
+// arr.push(8);
+// console.log(arr);
+// console.log(arr[2]);
+// arr.push('macaco')
+// console.log(arr);
+// console.log(arr[2])
+// arr.unshift('isabela'); //inclui no início
+// console.log(arr);
+// arr.pop(); //remove o último
+// console.log(arr);
+// arr.shift(); //remove primeiro
+// console.log(arr);
+// let falso = arr.includes('graça'); //pesquisa e retorna true ou false
+// console.log(falso);//false
+// let verdadeiro = arr.includes(8); 
+// console.log(verdadeiro);//true
+// let posicao = arr.indexOf('devair'); //pesquisa e retorna a posição
+// console.log(posicao);//0
+// let vazio = arr.indexOf(81); //retorna negativo, pq não existe
+// console.log(vazio);//-1
+// arr.push('isabela', 33);
+// console.log(arr);
+// const arr2 = arr.slice(1,4); //copia os elemento de 1 a 3 do array anterior
+// console.log(arr2);
+// const negativo = arr.slice(-2); //pegando a partir de um indíce de trás pra frente
+// console.log(negativo);
+// let juntos = arr2.concat(negativo, 8, 'eita');//concatena dois arrays
+// console.log(juntos);
+// let indiceEita = juntos.indexOf('eita');//posição de 'eita'
+// console.log(indiceEita);//6
+// let removidos = juntos.splice(indiceEita, 1, "vem que vem");
+// console.log(juntos);
+// console.log('item removido de "juntos" : '+removidos);
+// console.log(juntos[6]); //vem que vem;
+
+let pacientes = ['Matheus, Marcos, Lucas, João'];
+let op = 0;
+
+do{
+    alert(
+        '<H3>Lista de pacientes</H3>\n'
+    
+
+    )
+
+
+}while(op!=3);
