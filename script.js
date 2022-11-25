@@ -119,45 +119,44 @@ let atendido = ''
 let op = 0;
 let lista = [];
 
-for(i=0; i<pacientes.length; i++){
-    lista.push(`${(i+1)}° Paciente: ${pacientes[i]}\n`);
+for (i = 0; i < pacientes.length; i++) {
+    lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
 }
 
-op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
-        \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
+op = prompt(
+    `Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
+    \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`
+);
 
-while(op!=3){
-    if(op == 1){
+while (op != 3) {
+    if (op == 1) {
         lista = [];
         novoPaciente = prompt('Digite o nome do novo paciente');
         pacientes.push(novoPaciente);
-        for(i=0; i<pacientes.length; i++){
-            lista.push(`${(i+1)}° Paciente: ${pacientes[i]}\n`);
+        for (i = 0; i < pacientes.length; i++) {
+            lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
         }
-//        alert(`\nLista de Pacientes:\n${lista}`)
         op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
         \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
-    } else if (op == 2){
+    } else if (op == 2) {
         atendido = pacientes.shift();
-        lista.shift();
-        alert('Paciente atendido: '+atendido);
+        alert('Paciente atendido: ' + atendido);
         lista = [];
-        for(i=0; i<pacientes.length; i++){
-            lista.push(`${(i+1)}° Paciente: ${pacientes[i]}\n`);
+        for (i = 0; i < pacientes.length; i++) {
+            lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
         }
-        if(lista[0] == undefined){
+        if (lista[0] == undefined) {
             op = 3;
             alert(`${atendido} foi o último paciente da lista. Não existem pacientes em espera!\nSaindo...`);
-        }else{
+        } else {
             op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
         \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
         }
-    } else if (op>3 || op<1 || op!= 1 || op!=2 || op!=3){
+    } else if (op != 1 || op != 2 || op != 3) {
         alert('Opção inválida');
         op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
         \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
-    } else if (op == 3){
+    } else if (op == 3) {
         alert('Saindo...')
     }
-
 }
