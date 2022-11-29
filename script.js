@@ -113,49 +113,105 @@
 // console.log('item removido de "juntos" : '+removidos);
 // console.log(juntos[6]); //vem que vem;
 
-let pacientes = ['Matheus', 'Marcos', 'Lucas', 'João'];
+//lista de pacientes
+// let pacientes = ['Matheus', 'Marcos', 'Lucas', 'João'];
+// let novoPaciente = '';
+// let atendido = ''
+// let op = 0;
+// let lista = [];
+
+// for (i = 0; i < pacientes.length; i++) {
+//     lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
+// }
+
+// op = prompt(
+//     `Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
+//     \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`
+// );
+
+// while (op != 3) {
+//     if (op == 1) {
+//         lista = [];
+//         novoPaciente = prompt('Digite o nome do novo paciente');
+//         pacientes.push(novoPaciente);
+//         for (i = 0; i < pacientes.length; i++) {
+//             lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
+//         }
+//         op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
+//         \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
+//     } else if (op == 2) {
+//         atendido = pacientes.shift();
+//         alert('Paciente atendido: ' + atendido);
+//         lista = [];
+//         for (i = 0; i < pacientes.length; i++) {
+//             lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
+//         }
+//         if (lista[0] == undefined) {
+//             op = 3;
+//             alert(`${atendido} foi o último paciente da lista. Não existem pacientes em espera!\nSaindo...`);
+//         } else {
+//             op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
+//         \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
+//         }
+//     } else if (op != 1 || op != 2 || op != 3) {
+//         alert('Opção inválida');
+//         op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
+//         \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
+//     } else if (op == 3) {
+//         alert('Saindo...')
+//     }
+// }
+
+//Baralho
+let pacientes = ['A', '2', '3', '4'];
 let novoPaciente = '';
 let atendido = ''
 let op = 0;
 let lista = [];
 
-for (i = 0; i < pacientes.length; i++) {
-    lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
+for (i = pacientes.length; i > 0; i--) {
+    let aux = pacientes.shift();
+    lista.unshift(`${i}° carta: ${aux}\n`);
+    pacientes.push(aux);
 }
 
 op = prompt(
-    `Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
-    \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`
+    `Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
+    \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`
 );
 
 while (op != 3) {
     if (op == 1) {
         lista = [];
-        novoPaciente = prompt('Digite o nome do novo paciente');
+        novoPaciente = prompt('Qual carta será adicionada?');
         pacientes.push(novoPaciente);
-        for (i = 0; i < pacientes.length; i++) {
-            lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
+        for (i = pacientes.length; i > 0; i--) {
+            let aux = pacientes.shift();
+            lista.unshift(`${i}° carta: ${aux}\n`);
+            pacientes.push(aux);     
         }
-        op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
-        \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
+        op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
+        \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
     } else if (op == 2) {
-        atendido = pacientes.shift();
-        alert('Paciente atendido: ' + atendido);
+        atendido = pacientes.pop();
+        alert(`Carta retirada: "${atendido}"`);
         lista = [];
-        for (i = 0; i < pacientes.length; i++) {
-            lista.push(`${(i + 1)}° Paciente: ${pacientes[i]}\n`);
+        for (i = pacientes.length; i > 0; i--) {
+            let aux = pacientes.shift();
+            lista.unshift(`${i}° carta: ${aux}\n`);
+            pacientes.push(aux);
         }
         if (lista[0] == undefined) {
             op = 3;
-            alert(`${atendido} foi o último paciente da lista. Não existem pacientes em espera!\nSaindo...`);
+            alert(`"${atendido}" foi a última carta da pilha. Não existem cartas na pilha!\nSaindo...`);
         } else {
-            op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
-        \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
+            op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
+            \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
         }
     } else if (op != 1 || op != 2 || op != 3) {
         alert('Opção inválida');
-        op = prompt(`Lista de Pacientes:\n${lista.join('')}\nSelecione uma da seguintes opções:
-        \n1.Add novo paciente\n2.Atenter paciente\n3.Sair`);
+        op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
+        \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
     } else if (op == 3) {
         alert('Saindo...')
     }
