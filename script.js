@@ -163,56 +163,90 @@
 // }
 
 //Baralho
-let pacientes = ['A', '2', '3', '4'];
-let novoPaciente = '';
-let atendido = ''
-let op = 0;
-let lista = [];
+// let pacientes = ['A', '2', '3', '4'];
+// let novoPaciente = '';
+// let atendido = ''
+// let op = 0;
+// let lista = [];
 
-for (i = pacientes.length; i > 0; i--) {
-    let aux = pacientes.shift();
-    lista.unshift(`${i}° carta: ${aux}\n`);
-    pacientes.push(aux);
-}
+// for (i = pacientes.length; i > 0; i--) {
+//     let aux = pacientes.shift();
+//     lista.unshift(`${i}° carta: ${aux}\n`);
+//     pacientes.push(aux);
+// }
 
-op = prompt(
-    `Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
-    \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`
-);
+// op = prompt(
+//     `Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
+//     \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`
+// );
 
-do {
-    if (op == 1) {
-        lista = [];
-        novoPaciente = prompt('Qual carta será adicionada?');
-        pacientes.push(novoPaciente);
-        for (i = pacientes.length; i > 0; i--) {
-            let aux = pacientes.shift();
-            lista.unshift(`${i}° carta: ${aux}\n`);
-            pacientes.push(aux);     
-        }
-        op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
-        \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
-    } else if (op == 2) {
-        atendido = pacientes.pop();
-        alert(`Carta retirada: "${atendido}"`);
-        lista = [];
-        for (i = pacientes.length; i > 0; i--) {
-            let aux = pacientes.shift();
-            lista.unshift(`${i}° carta: ${aux}\n`);
-            pacientes.push(aux);
-        }
-        if (lista[0] == undefined) {
-            op = 3;
-            alert(`"${atendido}" foi a última carta da pilha. Não existem cartas na pilha!\nSaindo...`);
-        } else {
-            op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
-            \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
-        }
-    }  else if (op == 3) {
-        alert('Saindo...')
-    } else if (op != 1 || op != 2 || op != 3) {
-        alert('Opção inválida');
-        op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
-        \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
-    }
-} while (op != 3)
+// do {
+//     if (op == 1) {
+//         lista = [];
+//         novoPaciente = prompt('Qual carta será adicionada?');
+//         pacientes.push(novoPaciente);
+//         for (i = pacientes.length; i > 0; i--) {
+//             let aux = pacientes.shift();
+//             lista.unshift(`${i}° carta: ${aux}\n`);
+//             pacientes.push(aux);     
+//         }
+//         op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
+//         \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
+//     } else if (op == 2) {
+//         atendido = pacientes.pop();
+//         alert(`Carta retirada: "${atendido}"`);
+//         lista = [];
+//         for (i = pacientes.length; i > 0; i--) {
+//             let aux = pacientes.shift();
+//             lista.unshift(`${i}° carta: ${aux}\n`);
+//             pacientes.push(aux);
+//         }
+//         if (lista[0] == undefined) {
+//             op = 3;
+//             alert(`"${atendido}" foi a última carta da pilha. Não existem cartas na pilha!\nSaindo...`);
+//         } else {
+//             op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
+//             \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
+//         }
+//     }  else if (op == 3) {
+//         alert('Saindo...')
+//     } else if (op != 1 || op != 2 || op != 3) {
+//         alert('Opção inválida');
+//         op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
+//         \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
+//     }
+// } while (op != 3)
+
+//bidimencionais
+const arr= [
+    "1° nível",
+    ["2° nível", 42, true],
+    [
+        ["3° nível, 1° item", "Bom dia" ],
+        ["3° nível, 2° item", "Boa tarde"]
+    ],
+    ["4° nível"]
+]
+
+console.log(arr[2][1])//3° nível, 1° item, Bom dia
+console.log(arr);//tudo
+console.log(arr[3])//4° nível
+console.log(arr[1][2])//true
+console.log(arr[2][1][1])//Boa tarde
+console.log(arr[2][0][0])//3° nível, 1° item
+
+const matriz = [
+    ["1°l, 1°c", "1°l, 2°c", "1°l 3°c"],
+    ["2°l, 1°c", "2°l, 2°c", "2°l 3°c"],
+    ["3°l, 1°c", "3°l, 2°c", "3°l 3°c"]
+]
+
+matriz.push(['devair', 'isabela', 'gisele']);//nova linha no final do array
+matriz[0].push('cachorro');//cachorro ao final da linha 0
+matriz[0][1] = 'gato';//gato na 1° linha 2° coluna
+matriz[2].push('papagaio')//papagaio ao final da 3°linha
+matriz[2][1] = '';//"" na 3°linha 2°coluna
+matriz[1].pop();//apaga o último elemento da 2° linha
+// matriz.pop()//apaga a linha 3
+
+console.table(matriz) // função para printar matrix
