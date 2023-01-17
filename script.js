@@ -180,7 +180,7 @@ op = prompt(
     \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`
 );
 
-while (op != 3) {
+do {
     if (op == 1) {
         lista = [];
         novoPaciente = prompt('Qual carta será adicionada?');
@@ -208,11 +208,11 @@ while (op != 3) {
             op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
             \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
         }
+    }  else if (op == 3) {
+        alert('Saindo...')
     } else if (op != 1 || op != 2 || op != 3) {
         alert('Opção inválida');
         op = prompt(`Lista de cartas:\n${lista.join('')}\nSelecione uma da seguintes opções:
         \n1.Add nova carta ao topo\n2.Retirar carta do topo\n3.Sair`);
-    } else if (op == 3) {
-        alert('Saindo...')
     }
-}
+} while (op != 3)
