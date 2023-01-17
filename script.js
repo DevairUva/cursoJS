@@ -218,35 +218,55 @@
 // } while (op != 3)
 
 //bidimencionais
-const arr= [
-    "1° nível",
-    ["2° nível", 42, true],
-    [
-        ["3° nível, 1° item", "Bom dia" ],
-        ["3° nível, 2° item", "Boa tarde"]
-    ],
-    ["4° nível"]
-]
+// const arr= [
+//     "1° nível",
+//     ["2° nível", 42, true],
+//     [
+//         ["3° nível, 1° item", "Bom dia" ],
+//         ["3° nível, 2° item", "Boa tarde"]
+//     ],
+//     ["4° nível"]
+// ]
 
-console.log(arr[2][1])//3° nível, 1° item, Bom dia
-console.log(arr);//tudo
-console.log(arr[3])//4° nível
-console.log(arr[1][2])//true
-console.log(arr[2][1][1])//Boa tarde
-console.log(arr[2][0][0])//3° nível, 1° item
+// console.log(arr[2][1])//3° nível, 1° item, Bom dia
+// console.log(arr);//tudo
+// console.log(arr[3])//4° nível
+// console.log(arr[1][2])//true
+// console.log(arr[2][1][1])//Boa tarde
+// console.log(arr[2][0][0])//3° nível, 1° item
 
-const matriz = [
-    ["1°l, 1°c", "1°l, 2°c", "1°l 3°c"],
-    ["2°l, 1°c", "2°l, 2°c", "2°l 3°c"],
-    ["3°l, 1°c", "3°l, 2°c", "3°l 3°c"]
-]
+// const matriz = [
+//     ["1°l, 1°c", "1°l, 2°c", "1°l 3°c"],
+//     ["2°l, 1°c", "2°l, 2°c", "2°l 3°c"],
+//     ["3°l, 1°c", "3°l, 2°c", "3°l 3°c"]
+// ]
 
-matriz.push(['devair', 'isabela', 'gisele']);//nova linha no final do array
-matriz[0].push('cachorro');//cachorro ao final da linha 0
-matriz[0][1] = 'gato';//gato na 1° linha 2° coluna
-matriz[2].push('papagaio')//papagaio ao final da 3°linha
-matriz[2][1] = '';//"" na 3°linha 2°coluna
-matriz[1].pop();//apaga o último elemento da 2° linha
-// matriz.pop()//apaga a linha 3
+// matriz.push(['devair', 'isabela', 'gisele']);//nova linha no final do array
+// matriz[0].push('cachorro');//cachorro ao final da linha 0
+// matriz[0][1] = 'gato';//gato na 1° linha 2° coluna
+// matriz[2].push('papagaio')//papagaio ao final da 3°linha
+// matriz[2][1] = '';//"" na 3°linha 2°coluna
+// matriz[1].pop();//apaga o último elemento da 2° linha
+// // matriz.pop()//apaga a linha 3
 
-console.table(matriz) // função para printar matrix
+// console.table(matriz) // função para printar matrix
+
+//objetos
+let funcao = 'log';
+console[funcao]("olá mundo"); //assim como chamo log após o ponto, posso chamar dentro das []
+console[funcao]("Devair");//log é uma propiedade do objeto console
+const pessoa = {}; //criação de um objeto
+pessoa.nome = 'isabela'; //propiedade nome
+pessoa.idade = 26; //propiedade idade
+console[funcao](pessoa); //print
+pessoa.colegas = [["fabiano"], ["fabio, gisele"]]; //array dentro de um objeto
+pessoa.endereco = { //objeto dentro de outro objeto
+    rua: "Sao miguel",
+    numero: 19,
+    bairro: "Parada de Lucas",
+    estado: "RJ"
+}
+console[funcao](pessoa); //print pessoas
+console.log(pessoa.endereco.estado) //propiedade estado do objeto pessoa "rj"
+console.log(pessoa.colegas[1]) //segunda posição do array de arrays "fabio, gisele"
+console['log']('nome')
