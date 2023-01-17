@@ -252,21 +252,80 @@
 // console.table(matriz) // função para printar matrix
 
 //objetos
-let funcao = 'log';
-console[funcao]("olá mundo"); //assim como chamo log após o ponto, posso chamar dentro das []
-console[funcao]("Devair");//log é uma propiedade do objeto console
-const pessoa = {}; //criação de um objeto
-pessoa.nome = 'isabela'; //propiedade nome
-pessoa.idade = 26; //propiedade idade
-console[funcao](pessoa); //print
-pessoa.colegas = [["fabiano"], ["fabio, gisele"]]; //array dentro de um objeto
-pessoa.endereco = { //objeto dentro de outro objeto
-    rua: "Sao miguel",
-    numero: 19,
-    bairro: "Parada de Lucas",
-    estado: "RJ"
-}
-console[funcao](pessoa); //print pessoas
-console.log(pessoa.endereco.estado) //propiedade estado do objeto pessoa "rj"
-console.log(pessoa.colegas[1]) //segunda posição do array de arrays "fabio, gisele"
-console['log']('nome')
+// let funcao = 'log';
+// console[funcao]("olá mundo"); //assim como chamo log após o ponto, posso chamar dentro das []
+// console[funcao]("Devair");//log é uma propiedade do objeto console
+// const pessoa = {}; //criação de um objeto
+// pessoa.nome = 'isabela'; //propiedade nome
+// pessoa.idade = 26; //propiedade idade
+// console[funcao](pessoa); //print
+// pessoa.colegas = [["fabiano"], ["fabio, gisele"]]; //array dentro de um objeto
+// pessoa.endereco = { //objeto dentro de outro objeto
+//     rua: "Sao miguel",
+//     numero: 19,
+//     bairro: "Parada de Lucas",
+//     estado: "RJ"
+// }
+// console[funcao](pessoa); //print pessoas
+// console.log(pessoa.endereco.estado) //propiedade estado do objeto pessoa "rj"
+// console.log(pessoa.colegas[1]) //segunda posição do array de arrays "fabio, gisele"
+// console['log']('nome')
+
+//imóveis
+let op = 0;
+let quantidade = [];
+op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
+Selecione uma das opções a seguir:\n
+1. Cadastrar imóvel\n
+2. Mostrar imóveis cadastrados.\n
+3. Sair`);
+
+do{
+    if(op == 1){
+        const imovel = {};
+        imovel.propietario = prompt("Propietário:");
+        imovel.quartos = prompt("Quantidade de quartos");
+        imovel.banheiros = prompt("Quantidade de banheiros");
+        let aux = prompt("Possui garagem?\n 1/Sim\n 2/Não");
+        do{
+            if(aux == 1){
+                imovel.garagem = "Possui garagem.";
+            } else if(aux == 2){
+                imovel.garagem = "Não possui garagem";
+            } else {
+                alert("Opção incorreta!");
+                aux = prompt("Possui garagem?\n 1/Sim\n 2/Não");
+            }
+        } while (aux != 1 && aux != 2);
+        console.log("imovel\n");
+        console.log(imovel);
+        quantidade = imovel;
+        console.log("quantidade\n");
+        console.log(quantidade);
+        op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
+        Selecione uma das opções a seguir:\n
+        1. Cadastrar imóvel\n
+        2. Mostrar imóveis cadastrados.\n
+        3. Sair`);
+    } else if (op ==2){
+        console.log(quantidade.length)
+        for(i=0; i<quantidade.length; i++){
+            alert(quantidade);
+        }
+        op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
+        Selecione uma das opções a seguir:\n
+        1. Cadastrar imóvel\n
+        2. Mostrar imóveis cadastrados.\n
+        3. Sair`);
+    } else if (op ==3){
+        alert("Saindo");
+    } else {
+        alert("Opção incorreta!")
+        op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
+        Selecione uma das opções a seguir:\n
+        1. Cadastrar imóvel\n
+        2. Mostrar imóveis cadastrados.\n
+        3. Sair`);
+    }
+
+} while (op!=3)
