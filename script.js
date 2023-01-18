@@ -274,19 +274,6 @@
 //imóveis
 let op = 0;
 let quantidade = [];
-// const imovel = {
-//     propietario: "",
-//     quartos: "",
-//     banheiros: "",
-//     garagem: "",
-
-//     toString() {
-//         return `Propietário do imóvel: ${this.propietario}\n
-//         Quaantidade de quartos:${this.quartos}\n
-//         Quantidade de banheiros: ${this.banheiros}\n
-//         O imóvel ${this.garagem}`;
-//     }
-// };
 
 op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
 Selecione uma das opções a seguir:\n
@@ -296,6 +283,7 @@ Selecione uma das opções a seguir:\n
 
 do {
     if (op == 1) {
+
         const imovel = {
             propietario: "",
             quartos: "",
@@ -309,10 +297,12 @@ do {
                 O imóvel ${this.garagem}`;
             }
         };
+
         imovel.propietario = prompt("Propietário:");
         imovel.quartos = prompt("Quantidade de quartos");
         imovel.banheiros = prompt("Quantidade de banheiros");
         let aux = prompt("Possui garagem?\n 1/Sim\n 2/Não");
+        
         do {
             if (aux == 1) {
                 imovel.garagem = "possui garagem.";
@@ -329,13 +319,15 @@ do {
             }
         } while (aux != 1 && aux != 2);
         quantidade.push(imovel);
+        
         op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
         Selecione uma das opções a seguir:\n
         1. Cadastrar imóvel\n
         2. Mostrar imóveis cadastrados.\n
         3. Sair`);
+
     } else if (op == 2) {
-        console.log(quantidade)
+        
         for (i = 0; i < quantidade.length; i++) {
             alert(quantidade[i]);
         }
@@ -344,8 +336,10 @@ do {
         1. Cadastrar imóvel\n
         2. Mostrar imóveis cadastrados.\n
         3. Sair`);
+
     } else if (op == 3) {
         alert("Saindo");
+
     } else {
         alert("Opção incorreta!")
         op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
