@@ -274,32 +274,63 @@
 //imóveis
 let op = 0;
 let quantidade = [];
+// const imovel = {
+//     propietario: "",
+//     quartos: "",
+//     banheiros: "",
+//     garagem: "",
+
+//     toString() {
+//         return `Propietário do imóvel: ${this.propietario}\n
+//         Quaantidade de quartos:${this.quartos}\n
+//         Quantidade de banheiros: ${this.banheiros}\n
+//         O imóvel ${this.garagem}`;
+//     }
+// };
+
 op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
 Selecione uma das opções a seguir:\n
 1. Cadastrar imóvel\n
 2. Mostrar imóveis cadastrados.\n
 3. Sair`);
 
-do{
-    if(op == 1){
-        const imovel = {};
+do {
+    if (op == 1) {
+        const imovel = {
+            propietario: "",
+            quartos: "",
+            banheiros: "",
+            garagem: "",
+
+            toString() {
+                return `Propietário do imóvel: ${this.propietario}\n
+                Quantidade de quartos:${this.quartos}\n
+                Quantidade de banheiros: ${this.banheiros}\n
+                O imóvel ${this.garagem}`;
+            }
+        };
         imovel.propietario = prompt("Propietário:");
         imovel.quartos = prompt("Quantidade de quartos");
         imovel.banheiros = prompt("Quantidade de banheiros");
         let aux = prompt("Possui garagem?\n 1/Sim\n 2/Não");
-        do{
-            if(aux == 1){
-                imovel.garagem = "Possui garagem.";
-            } else if(aux == 2){
-                imovel.garagem = "Não possui garagem";
+        do {
+            if (aux == 1) {
+                imovel.garagem = "possui garagem.";
+            } else if (aux == 2) {
+                imovel.garagem = "não possui garagem";
             } else {
                 alert("Opção incorreta!");
                 aux = prompt("Possui garagem?\n 1/Sim\n 2/Não");
+                if (aux == 1) {
+                    imovel.garagem = "possui garagem.";
+                } else if (aux == 2) {
+                    imovel.garagem = "não possui garagem";
+                }
             }
         } while (aux != 1 && aux != 2);
         console.log("imovel\n");
         console.log(imovel);
-        quantidade = imovel;
+        quantidade.push(imovel);
         console.log("quantidade\n");
         console.log(quantidade);
         op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
@@ -307,17 +338,17 @@ do{
         1. Cadastrar imóvel\n
         2. Mostrar imóveis cadastrados.\n
         3. Sair`);
-    } else if (op ==2){
-        console.log(quantidade.length)
-        for(i=0; i<quantidade.length; i++){
-            alert(quantidade);
+    } else if (op == 2) {
+        console.log(quantidade)
+        for (i = 0; i < quantidade.length; i++) {
+            alert(quantidade[i]);
         }
         op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
         Selecione uma das opções a seguir:\n
         1. Cadastrar imóvel\n
         2. Mostrar imóveis cadastrados.\n
         3. Sair`);
-    } else if (op ==3){
+    } else if (op == 3) {
         alert("Saindo");
     } else {
         alert("Opção incorreta!")
@@ -328,4 +359,4 @@ do{
         3. Sair`);
     }
 
-} while (op!=3)
+} while (op != 3)
