@@ -328,11 +328,7 @@ do {
                 }
             }
         } while (aux != 1 && aux != 2);
-        console.log("imovel\n");
-        console.log(imovel);
         quantidade.push(imovel);
-        console.log("quantidade\n");
-        console.log(quantidade);
         op = prompt(`Existe(m) ${quantidade.length} imóvel(veis) cadastrado(s).\n
         Selecione uma das opções a seguir:\n
         1. Cadastrar imóvel\n
