@@ -285,9 +285,9 @@ do {
     if (op == 1) {
 
         const imovel = {
-            propietario: "",
-            quartos: "",
-            banheiros: "",
+            propietario: prompt("Propietário:"),
+            quartos: prompt("Quantidade de quartos"),
+            banheiros: prompt("Quantidade de banheiros"),
             garagem: "",
 
             toString() {
@@ -298,10 +298,7 @@ do {
             }
         };
 
-        imovel.propietario = prompt("Propietário:");
-        imovel.quartos = prompt("Quantidade de quartos");
-        imovel.banheiros = prompt("Quantidade de banheiros");
-        let aux = prompt("Possui garagem?\n 1/Sim\n 2/Não");
+				let aux = prompt("Possui garagem?\n 1/Sim\n 2/Não")
         
         do {
             if (aux == 1) {
