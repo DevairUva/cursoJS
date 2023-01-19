@@ -1,0 +1,23 @@
+{
+  "name": "cursojs",
+  "version": "1.0.0",
+  "description": "Curso JS ONC",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevairUva/cursoJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevairUva/cursoJS/issues"
+  },
+  "homepage": "https://github.com/DevairUva/cursoJS#readme",
+  "dependencies": {
+    "moment": "^2.29.4"
+  }
+}

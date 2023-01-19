@@ -349,33 +349,43 @@
 // } while (op != 3)
 
 //return
-function criarProduto(nome, preco, estoque){
-	const produto = {
-		nome,
-		preco,
-		estoque,
-	};
-	return produto; //objeto sempre será retornado
-}
-const cadeira = criarProduto("cadeira", 500, 1) //criação de objeto com parâmetro
-console.log(cadeira) //conseguimos imprimir graças ao return
-cadeira.estoque++
-console.log(cadeira.estoque)
+// function criarProduto(nome, preco, estoque){
+// 	const produto = {
+// 		nome,
+// 		preco,
+// 		estoque,
+// 	};
+// 	return produto; //objeto sempre será retornado
+// }
+// const cadeira = criarProduto("cadeira", 500, 1) //criação de objeto com parâmetro
+// console.log(cadeira) //conseguimos imprimir graças ao return
+// cadeira.estoque++
+// console.log(cadeira.estoque)
 
-function soma(a, b){ //soma dois números
-	// const resultado = parseFloat(a + b); //utilizando uma função no recebimento
-	// return resultado; //retorno
-	return a+b //podemos usar direto no return
-}
-console.log(soma(8,2)) //função soma dentro da função console.log
+// function soma(a, b){ //soma dois números
+// 	// const resultado = parseFloat(a + b); //utilizando uma função no recebimento
+// 	// return resultado; //retorno
+// 	return a+b //podemos usar direto no return
+// }
+// console.log(soma(8,2)) //função soma dentro da função console.log
 
-function soma(primeiro, segundo){
-	return primeiro+segundo;
-}
-function dobrouSoma(normal){
-	return soma(normal, normal) //função no retorno de outra
+// function soma(primeiro, segundo){
+// 	return primeiro+segundo;
+// }
+// function dobrouSoma(normal){
+// 	return soma(normal, normal) //função no retorno de outra
+// }
+
+// console.log(soma(1,2))
+// console.log(dobrouSoma(2))
+
+//NODE.JS
+
+const moment = require ('moment');
+
+function myName(name){
+	console.log(name);
+	console.log(moment().format('HH:mm'))
 }
 
-console.log(soma(1,2))
-console.log(dobrouSoma(2))
-
+myName("Devair Martins")
